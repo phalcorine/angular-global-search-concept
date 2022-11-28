@@ -1,0 +1,16 @@
+<div>
+  <div>
+    <h4>Search Elements</h4>
+    <ul>
+      <li *ngFor="let result of searchResults">{{ result.name }}</li>
+    </ul>
+  </div>
+
+  <p-autoComplete
+    [(ngModel)]="searchText"
+    [suggestions]="searchResults"
+    (completeMethod)="onSearch($event)"
+    (onSelect)="onSelect($event)"
+    field="name"
+  ></p-autoComplete>
+</div>
